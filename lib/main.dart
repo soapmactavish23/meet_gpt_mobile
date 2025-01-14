@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:meet_gpt_mobile/main_package/core/application_provider.dart';
-import 'package:meet_gpt_mobile/main_package/routes/routes.dart';
-import 'package:meet_gpt_mobile/main_package/routes/routes_name.dart';
-import 'package:meet_gpt_mobile/main_package/services/config/env.dart';
-import 'package:meet_gpt_mobile/main_package/theme/main_nav_global_key.dart';
-import 'package:meet_gpt_mobile/main_package/theme/main_theme.dart';
+import 'package:meet_gpt_mobile/core/application_config.dart';
+import 'package:meet_gpt_mobile/core/provider/application_provider.dart';
+import 'package:meet_gpt_mobile/core/routes/router_name.dart';
+import 'package:meet_gpt_mobile/core/routes/routes.dart';
+import 'package:meet_gpt_mobile/core/ui/main_nav_global_key.dart';
+import 'package:meet_gpt_mobile/core/ui/main_theme.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Env.i.load();
+  await ApplicationConfig().configureApp();
   runApp(const MyApp());
 }
 
@@ -18,13 +18,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ApplicationProvider(
       materialApp: MaterialApp(
-        title: 'Meet GPT',
+        title: 'Animais Peçonhentos',
         debugShowCheckedModeBanner: false,
         navigatorKey: MainNavGlobalKey.instance.navKey,
         theme: MainTheme.themeData,
-        initialRoute: RoutesName.splashScreen,
+        initialRoute: RouterName.splashScreen,
         onGenerateRoute: Routes.onGenereteRoute,
+        supportedLocales: const [
+          Locale('pt', 'BR'),
+        ],
+        locale: const Locale('pt', 'BR'),
       ),
     );
   }
 }
+
