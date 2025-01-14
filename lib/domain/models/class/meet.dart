@@ -16,6 +16,10 @@ class Meet {
     required this.url,
   });
 
+  factory Meet.empty() {
+    return Meet(id: 0, name: '', translate: '', date: DateTime.now(), url: null);
+  }
+
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
