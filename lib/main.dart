@@ -18,16 +18,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ApplicationProvider(
       materialApp: MaterialApp(
-        title: 'Animais Peçonhentos',
+        title: 'Meet GPT',
         debugShowCheckedModeBanner: false,
         navigatorKey: MainNavGlobalKey.instance.navKey,
         theme: MainTheme.themeData,
         initialRoute: RouterName.splashScreen,
         onGenerateRoute: Routes.onGenereteRoute,
-        supportedLocales: const [
-          Locale('pt', 'BR'),
-        ],
-        locale: const Locale('pt', 'BR'),
       ),
     );
   }

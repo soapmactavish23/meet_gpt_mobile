@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meet_gpt_mobile/domain/providers/meet/meet_provider_impl.dart';
 import 'package:provider/provider.dart';
-import 'package:meet_gpt_mobile/core/provider/group/group_provider_impl.dart';
-import 'package:meet_gpt_mobile/core/provider/user/user_provider_impl.dart';
 
 class ApplicationProvider extends StatelessWidget {
   final Widget materialApp;
@@ -12,11 +11,7 @@ class ApplicationProvider extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => UserProviderImpl(),
-          lazy: false,
-        ),
-        ChangeNotifierProvider(
-          create: (_) => GroupProviderImpl(),
+          create: (_) => MeetProviderImpl(),
           lazy: false,
         ),
       ],
