@@ -1,4 +1,4 @@
-class MsgsCustom {
+abstract class MsgsCustom {
   static String save = "Salvo com sucesso!";
   static String deleted = "Deletado com sucesso!";
   static String confirmation = "Tem certeza que deseja excluir?";

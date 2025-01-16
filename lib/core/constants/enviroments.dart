@@ -6,23 +6,25 @@ class Enviroments {
   Enviroments._();
 
   static String? param(String paramName) {
-    if (kReleaseMode) {
-      return FirebaseRemoteConfig.instance.getString(paramName);
-    } else {
-      return dotenv.env[paramName];
-    }
+    return dotenv.env[paramName];
+    // if (kReleaseMode) {
+    //   return FirebaseRemoteConfig.instance.getString(paramName);
+    // } else {}
   }
 
   static Future<void> loadEnvs() async {
-    if (kReleaseMode) {
-      final remoteConfig = FirebaseRemoteConfig.instance;
-      await remoteConfig.setConfigSettings(RemoteConfigSettings(
-        fetchTimeout: const Duration(minutes: 1),
-        minimumFetchInterval: const Duration(hours: 1),
-      ));
-      await remoteConfig.fetchAndActivate();
-    } else {
-      await dotenv.load(fileName: '.env');
-    }
+    await dotenv.load(fileName: '.env');
+    // if (kReleaseMode) {
+    //   final remoteConfig = FirebaseRemoteConfig.instance;
+    //   await remoteConfig.setConfigSettings(RemoteConfigSettings(
+    //     fetchTimeout: const Duration(
+    //       minutes: 1,
+    //     ),
+    //     minimumFetchInterval: const Duration(hours: 1),
+    //   ));
+    //   await remoteConfig.fetchAndActivate();
+    // } else {
+    //   await dotenv.load(fileName: '.env');
+    // }
   }
 }

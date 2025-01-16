@@ -11,13 +11,13 @@ class NotFound extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Opacity(
-          opacity: 0.6,
-          child: Image.asset(
-            ImageConstants.not_found,
-            width: 200,
-          ),
-        ),
+        // Opacity(
+        //   opacity: 0.6,
+        //   child: Image.asset(
+        //     ImageConstants.not_found,
+        //     width: 200,
+        //   ),
+        // ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

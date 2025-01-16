@@ -35,7 +35,7 @@ class Meet {
       id: map['id'] as int,
       name: map['name'] as String,
       translate: map['translate'] as String,
-      date: DateTime.fromMillisecondsSinceEpoch(map['date'] as int),
+      date: DateTime.parse(map['date']),
       url: map['url'] as dynamic,
     );
   }
