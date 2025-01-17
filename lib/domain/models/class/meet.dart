@@ -8,16 +8,18 @@ class Meet {
   String translate;
   DateTime date;
   dynamic url;
+  String summary;
   Meet({
     required this.id,
     required this.name,
     required this.translate,
     required this.date,
     required this.url,
+    required this.summary,
   });
 
   factory Meet.empty() {
-    return Meet(id: 0, name: '', translate: '', date: DateTime.now(), url: null);
+    return Meet(id: 0, name: '', translate: '', date: DateTime.now(), url: null, summary: '');
   }
 
   Map<String, dynamic> toMap() {
@@ -37,6 +39,7 @@ class Meet {
       translate: map['translate'] as String,
       date: DateTime.parse(map['date']),
       url: map['url'] as dynamic,
+      summary: map['summary'] as String,
     );
   }
 
@@ -47,6 +50,6 @@ class Meet {
 
   @override
   String toString() {
-    return 'Meet(id: $id, name: $name, translate: $translate, date: $date, url: $url)';
+    return 'Meet(id: $id, name: $name, translate: $translate, date: $date, url: $url, summary: $summary)';
   }
 }

@@ -52,7 +52,7 @@ class _HomeViewState extends State<HomeView> {
                   title: meet.name,
                   subtitle: Text(meet.date.convertYYYYMMDDHHMMSS()),
                   onTap: () {
-                    
+                    Navigator.of(context).pushNamed(RouterName.meetDetail, arguments: meet);
                   },
                 );
               },

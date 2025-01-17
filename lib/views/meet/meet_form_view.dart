@@ -61,7 +61,7 @@ class _MeetFormViewState extends State<MeetFormView> {
   }
 
   Future<void> startRecording() async {
-    await recorder.startRecorder(toFile: 'audio_file.aac');
+    await recorder.startRecorder(toFile: 'audio_file.mp3');
   }
 
   Future<void> stopRecording() async {
